@@ -1,6 +1,6 @@
 import { Button, Form, Input, Layout } from 'antd'
  
-export default function Profile() {
+export default function Profile({ user, token, setUser}) {
     const onFinish=handleProfileUpdate = (values) => {
         //send form values and token to API
         fetch.(`http://localhost:3030/users/${user.uid}`), {
@@ -12,6 +12,8 @@ export default function Profile() {
             body: JSON.stringify(values), 
         }
     }
+
+        .then(response => response.json())
     return (
         <Layout.Content style={{ padding: '50px '}}>
         <h1>Profile</h1>

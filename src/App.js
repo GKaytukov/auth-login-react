@@ -11,7 +11,7 @@ export default function App() {
   return (
     <Routes>
       {user
-      ? <Route path="*" element={<Profile user={user}/>} />
+      ? <Route path="*" element={<Profile token={tokenuser={user}/>} />
       : <>
       <Route path="/signup" element={<Signup setToken={setUser}/>} />
       <Route path='*'element={<Login setToken={setUser} />}/>
